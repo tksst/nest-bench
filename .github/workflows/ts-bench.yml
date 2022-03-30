@@ -1,0 +1,18 @@
+name: build ts-bench
+
+on:
+  push:
+    paths:
+      - 'ts-bench/**'
+  pull_request:
+    paths:
+      - 'ts-bench/**'
+  workflow_dispatch:
+
+jobs:
+  build-and-push:
+    name: Build and Push ts-bench
+    uses: ./.github/workflows/build-and-push.yml
+    with:
+      image-name: ts-bench
+      context-directory: ts-bench

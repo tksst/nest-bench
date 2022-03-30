@@ -11,12 +11,6 @@ RUN rm -rf /home/node/TypeScript/.git
 
 FROM node:16.14.2-bullseye-slim
 
-# There is an issue on GitHub Actions so we can not use mount=type=cache
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends awscli \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/
-
 USER node:node
 WORKDIR /home/node
 
