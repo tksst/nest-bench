@@ -21,3 +21,7 @@ USER node:node
 WORKDIR /home/node
 
 COPY --from=0 --chown=node:node /home/node/TypeScript ./TypeScript
+
+COPY bench.sh /bench.sh
+
+ENTRYPOINT [ "/bench.sh" ]
