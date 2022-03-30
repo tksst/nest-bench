@@ -37,6 +37,7 @@ function run(){
         else
             echo "exited status $rv, output below:"
             cat "$output" >&2
+            exit $rv
         fi
         rm -f "$timeresult" "$output"
     done
